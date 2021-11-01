@@ -614,7 +614,7 @@ class PythonLambda(Lambda):
         commands = []
         commands.append('cp -Rf * {target}')
         if os.path.isfile(requirements_path):
-            commands.append('{pip_path} install --install-option="--prefix=" -r requirements.txt -q -t {target} {pip_install_extra}')
+            commands.append('{pip_path} install -r requirements.txt -q -t {target} {pip_install_extra}')
             commands.append('cd {target} && find . -name "*.pyc" -delete')
         return commands
 
